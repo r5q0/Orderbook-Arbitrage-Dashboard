@@ -1,0 +1,14 @@
+tradeogre
+pionex
+mexc
+bitmart
+lbank
+kraken
+bitforex
+coinmerce
+digifinex
+bitbox
+coinex
+txbit
+xt.com
+safe.trade
