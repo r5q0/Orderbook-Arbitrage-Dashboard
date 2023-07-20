@@ -1,6 +1,6 @@
-tradeogre
-pionex
-mexc
+tradeogre DONE
+pionex DONE
+mexc DONE 
 bitmart
 lbank
 kraken
