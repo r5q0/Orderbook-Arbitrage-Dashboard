@@ -1,10 +1,6 @@
 <?php
-
-
 $raw = file_get_contents('https://api.bitforex.com/api/v1/market/symbols');
-
 $clean = json_decode($raw, true);
-
 
 foreach ($clean['data'] as $symbol) {
     if (strpos($symbol['symbol'], 'usdt') == true) {
