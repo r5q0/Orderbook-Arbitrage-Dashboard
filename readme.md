@@ -4,7 +4,7 @@ mexc DONE
 bitmart DONE
 lbank DONE (very slow will revise later)
 kraken NOT POSSIBLE
-bitforex
+bitforex DONE (very slow also rate limited do not use)
 coinmerce
 digifinex
 bitbox
