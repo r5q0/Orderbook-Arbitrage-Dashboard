@@ -5,8 +5,8 @@ bitmart DONE
 lbank DONE (very slow will revise later)
 kraken NOT POSSIBLE
 bitforex DONE (very slow also rate limited do not use)
-coinmerce
-digifinex
+coinmerce NOT POSSIBLE
+digifinex 
 bitbox
 coinex
 txbit
