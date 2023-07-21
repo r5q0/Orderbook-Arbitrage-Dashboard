@@ -2,7 +2,7 @@ tradeogre DONE
 pionex DONE
 mexc DONE 
 bitmart DONE
-lbank
+lbank DONE (very slow will revise later)
 kraken
 bitforex
 coinmerce
