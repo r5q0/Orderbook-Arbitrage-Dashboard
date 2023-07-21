@@ -3,7 +3,7 @@ pionex DONE
 mexc DONE 
 bitmart DONE
 lbank DONE (very slow will revise later)
-kraken
+kraken NOT POSSIBLE
 bitforex
 coinmerce
 digifinex
