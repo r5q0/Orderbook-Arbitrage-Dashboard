@@ -8,6 +8,6 @@ bitforex DONE (very slow also rate limited do not use)
 coinmerce NOT POSSIBLE
 digifinex DONE
 bibox DONE (slow)
-coinex done (slow)
+coinex DONE (slow)
+xt.com DONE
 txbit
-xt.com
