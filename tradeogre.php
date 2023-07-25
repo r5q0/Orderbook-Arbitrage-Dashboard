@@ -34,3 +34,4 @@ if ($data) {
 } else {
   echo "Error fetching data\n";
 }
+
