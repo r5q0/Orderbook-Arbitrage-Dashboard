@@ -7,7 +7,7 @@ kraken NOT POSSIBLE
 bitforex DONE (very slow also rate limited do not use)
 coinmerce NOT POSSIBLE
 digifinex DONE
-bitbox
+bibox DONE (slow)
 coinex
 txbit
 xt.com
