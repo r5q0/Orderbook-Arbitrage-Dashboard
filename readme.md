@@ -8,7 +8,6 @@ bitforex DONE (very slow also rate limited do not use)
 coinmerce NOT POSSIBLE
 digifinex DONE
 bibox DONE (slow)
-coinex
+coinex done (slow)
 txbit
 xt.com
-safe.trade  NO API
