@@ -11,4 +11,4 @@ bitbox
 coinex
 txbit
 xt.com
-safe.trade
+safe.trade  NO API
