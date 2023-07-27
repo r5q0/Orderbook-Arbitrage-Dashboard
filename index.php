@@ -1,7 +1,9 @@
 <?php
 require('digifinex.php');
 require('xt.php');
-$exchanges = array('digifinex' => $digifinex, 'xt' => $xt);
+require('bitmart.php');
+
+$exchanges = array('digifinex' => $digifinex, 'xt' => $xt , 'bitmart' => $bitmart);
 
 
 foreach ($digifinex as $symbol => $value) {
