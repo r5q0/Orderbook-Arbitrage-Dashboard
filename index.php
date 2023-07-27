@@ -2,8 +2,10 @@
 require('digifinex.php');
 require('xt.php');
 require('bitmart.php');
+require('mexc.php');
 
-$exchanges = array('digifinex' => $digifinex, 'xt' => $xt , 'bitmart' => $bitmart);
+
+$exchanges = array('digifinex' => $digifinex, 'xt' => $xt , 'bitmart' => $bitmart , 'mexc' => $mexc);
 
 
 foreach ($digifinex as $symbol => $value) {
