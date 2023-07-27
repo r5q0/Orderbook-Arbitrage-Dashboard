@@ -11,12 +11,11 @@ $exchanges = array('digifinex' => $digifinex, 'xt' => $xt, 'bitmart' => $bitmart
 
 
 foreach ($digifinex as $symbol => $value) {
-
     echo "-------------------------------------------\n";
     echo $symbol . PHP_EOL;
     foreach ($exchanges as $name => $exchange) {
         if (isset($exchange[$symbol])) {
-            echo $name . " " . $exchange[$symbol]['bid'] . " " . $exchange[$symbol]['ask'] . PHP_EOL;
+            echo $name . " bid " . $exchange[$symbol]['bid'] . " ask " . $exchange[$symbol]['ask'] . PHP_EOL;
         }
     }
 }
