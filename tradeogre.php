@@ -1,37 +1,22 @@
 <?php
-// Function to fetch data from the API
-function fetchData() {
-  $url = 'https://tradeogre.com/api/v1/markets';
-  $response = file_get_contents($url);
 
-  if ($response === false) {
-    return null;
-  }
+$response = file_get_contents('https://tradeogre.com/api/v1/markets');
+$data = json_decode($response, true);
 
-  $data = json_decode($response, true);
-  return $data;
-}
-
-// Function to check if the pair is a USDT pair
-function isUSDTpair($pair) {
-  return strpos($pair, 'USDT') !== false;
-}
+$tradeogre = array();
 
 
-$data = fetchData();
-if ($data) {
-  foreach ($data as $market) {
-    foreach ($market as $pair => $details) {
-      if (isUSDTpair($pair)) {
-        echo "Pair: " . $pair . "\n";
-        echo "Volume: " . $details['volume'] . "\n";
-        echo "Bid: " . $details['bid'] . "\n";
-        echo "Ask: " . $details['ask'] . "\n";
-        echo "\n";
-      }
+foreach ($data as $market) {
+  foreach ($market as $pair => $details) {
+    if (strpos($pair, 'USDT') !== false) {
+
+
+      $lower = strtolower($pair);
+      $symbol = str_replace("-", "_", $lower);
+
+
+      $tradeogre[$symbol]['bid'] = $details['bid'];
+      $tradeogre[$symbol]['ask'] = $details['ask'];
     }
   }
-} else {
-  echo "Error fetching data\n";
 }
-
