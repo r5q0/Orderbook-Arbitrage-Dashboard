@@ -12,8 +12,11 @@
 
         $result = file_get_contents("https://api.coinex.com/v1/market/depth?market=" . $pair . "&merge=0.1&limit=1");
         $response1 = json_decode($result, true);
-
+        if ($response1['data']['bids'][0][0] != 0.000000 && $response1['data']['asks'][0][0] != 0.000000) {
         
-        echo $pair. " buy " . $response1['data']['bids'][0][0] . " Asks " . $response1['data']['asks'][0][0] . PHP_EOL;
-    }}
+      
 
+        echo $pair. " buy " . $response1['data']['bids'][0][0] . " Asks " . $response1['data']['asks'][0][0] . PHP_EOL;
+    } }}
+
+    
