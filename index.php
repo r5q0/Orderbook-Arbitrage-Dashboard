@@ -1,16 +1,16 @@
 <?php
-require('digifinex.php');
 require('xt.php');
 require('bitmart.php');
 require('mexc.php');
 require('tradeogre.php');
-
-$exchanges = array('digifinex' => $digifinex, 'xt' => $xt, 'bitmart' => $bitmart, 'mexc' => $mexc, 'tradeogre' => $tradeogre);
+require('digifinex.php');
+require('kucoin.php');
+$exchanges = array('xt' => $xt, 'bitmart' => $bitmart, 'mexc' => $mexc, 'tradeogre' => $tradeogre , 'digifinex' => $digifinex , 'kucoin' => $kucoin);
 
 $bids = array();
 $asks = array();
 
-foreach ($digifinex as $symbol => $value) {
+foreach ($kucoin as $symbol => $value) {
     foreach ($exchanges as $name => $exchange) {
         if (isset($exchange[$symbol])) {
             $bids[$symbol][$name] = $exchange[$symbol]['bid'];
@@ -29,7 +29,7 @@ foreach ($bids as $symbol => $symbolBids) {
     try {
         if ($lowestAsk !== 0 || $highestBid !== 0) {
             $percentageDifference = (($highestBid - $lowestAsk) / $lowestAsk) * 100;
-            if ($percentageDifference > 1 && $percentageDifference < 40) {
+            if ($percentageDifference > 7 && $percentageDifference < 60) {
                 echo "-------------------------------------------\n";
                 echo "Symbol: $symbol\n";
                 echo "Highest bid: $highestBid on $highestBidExchange\n";
@@ -38,7 +38,6 @@ foreach ($bids as $symbol => $symbolBids) {
             }
         }
     } catch (DivisionByZeroError $e) {
-        error_log("DivisionByZeroError occurred for symbol: $symbol");
         continue;
     }
 }
