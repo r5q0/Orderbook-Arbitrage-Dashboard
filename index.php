@@ -1,17 +1,17 @@
 <?php
-require('bannedCoins.php');
+require('bybit.php');
 require('xt.php');
 require('bitmart.php');
 require('mexc.php');
 require('tradeogre.php');
 require('digifinex.php');
 require('kucoin.php');
-$exchanges = array('xt' => $xt, 'bitmart' => $bitmart, 'mexc' => $mexc, 'tradeogre' => $tradeogre, 'digifinex' => $digifinex, 'kucoin' => $kucoin);
+$exchanges = array('xt' => $xt, 'bitmart' => $bitmart, 'mexc' => $mexc, 'tradeogre' => $tradeogre, 'digifinex' => $digifinex, 'kucoin' => $kucoin, 'bybit' => $bybit);
 $eorrotokens = array();
 $bids = array();
 $asks = array();
 
-foreach ($kucoin as $symbol => $value) {
+foreach ($bybit as $symbol => $value) {
     foreach ($exchanges as $name => $exchange) {
         if (isset($exchange[$symbol])) {
             $bids[$symbol][$name] = $exchange[$symbol]['bid'];
@@ -30,7 +30,7 @@ foreach ($bids as $symbol => $symbolBids) {
     try {
         if ($lowestAsk !== 0 || $highestBid !== 0) {
             $percentageDifference = (($highestBid - $lowestAsk) / $lowestAsk) * 100;
-            if ($percentageDifference > 7 && $percentageDifference < 60 && $highestBidExchange !== $lowestAskExchange ) {
+            if ($percentageDifference > 0.1 && $percentageDifference < 100 && $highestBidExchange !== $lowestAskExchange ) {
                 echo "-------------------------------------------\n";
                 echo "Symbol: $symbol\n";
                 echo "Highest bid: $highestBid on $highestBidExchange\n";
