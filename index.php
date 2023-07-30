@@ -1,4 +1,5 @@
 <?php
+require('kraken.php');
 require('bybit.php');
 require('xt.php');
 require('bitmart.php');
@@ -6,7 +7,7 @@ require('mexc.php');
 require('tradeogre.php');
 require('digifinex.php');
 require('kucoin.php');
-$exchanges = array('xt' => $xt, 'bitmart' => $bitmart, 'mexc' => $mexc, 'tradeogre' => $tradeogre, 'digifinex' => $digifinex, 'kucoin' => $kucoin, 'bybit' => $bybit);
+$exchanges = array('xt' => $xt, 'bitmart' => $bitmart, 'mexc' => $mexc, 'tradeogre' => $tradeogre, 'digifinex' => $digifinex, 'kucoin' => $kucoin, 'bybit' => $bybit, 'kraken' => $kraken);
 $eorrotokens = array();
 $bids = array();
 $asks = array();
