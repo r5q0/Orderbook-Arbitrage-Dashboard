@@ -1,12 +1,13 @@
 <?php
+require('bannedCoins.php');
 require('xt.php');
 require('bitmart.php');
 require('mexc.php');
 require('tradeogre.php');
 require('digifinex.php');
 require('kucoin.php');
-$exchanges = array('xt' => $xt, 'bitmart' => $bitmart, 'mexc' => $mexc, 'tradeogre' => $tradeogre , 'digifinex' => $digifinex , 'kucoin' => $kucoin);
-
+$exchanges = array('xt' => $xt, 'bitmart' => $bitmart, 'mexc' => $mexc, 'tradeogre' => $tradeogre, 'digifinex' => $digifinex, 'kucoin' => $kucoin);
+$eorrotokens = array();
 $bids = array();
 $asks = array();
 
@@ -29,7 +30,7 @@ foreach ($bids as $symbol => $symbolBids) {
     try {
         if ($lowestAsk !== 0 || $highestBid !== 0) {
             $percentageDifference = (($highestBid - $lowestAsk) / $lowestAsk) * 100;
-            if ($percentageDifference > 7 && $percentageDifference < 60) {
+            if ($percentageDifference > 7 && $percentageDifference < 60 && $highestBidExchange !== $lowestAskExchange ) {
                 echo "-------------------------------------------\n";
                 echo "Symbol: $symbol\n";
                 echo "Highest bid: $highestBid on $highestBidExchange\n";
@@ -38,6 +39,19 @@ foreach ($bids as $symbol => $symbolBids) {
             }
         }
     } catch (DivisionByZeroError $e) {
+
+        array_push($eorrotokens, $symbol);
         continue;
     }
+}
+
+$answer = readline("want to see the error tokens? (y/n)");
+
+if ($answer == "y") {
+    foreach ($eorrotokens as $error) {
+        echo $error . "\n";
+    }
+    echo "coins/tokens that had an errror: " . count($eorrotokens);
+}
+if ($answer == "n") {
 }
