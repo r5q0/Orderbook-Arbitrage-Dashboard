@@ -11,8 +11,12 @@ The code currently supports the following cryptocurrency exchanges:
 3. Bitmart
 4. MEXC (MEXC Global)
 5. Tradeogre
+6. Bybit
+7. KuCoin
+8. Kraken
+9. Gate.io
 
-## Files and their Purpose
+## Files and Their Purpose
 
 1. `index.php`: This file is the main entry point of the application. It imports data from all supported exchanges and displays the bid and ask prices for each cryptocurrency pair.
 
@@ -25,6 +29,14 @@ The code currently supports the following cryptocurrency exchanges:
 5. `mexc.php`: This file retrieves cryptocurrency market data from the MEXC exchange and stores bid and ask prices for relevant USDT pairs.
 
 6. `tradeogre.php`: This file retrieves cryptocurrency market data from the Tradeogre exchange and stores bid and ask prices for relevant USDT pairs.
+
+7. `bybit.php`: This file retrieves cryptocurrency market data from the Bybit exchange and stores bid and ask prices for relevant USDT pairs.
+
+8. `kucoin.php`: This file retrieves cryptocurrency market data from the KuCoin exchange and stores bid and ask prices for relevant USDT pairs.
+
+9. `kraken.php`: This file retrieves cryptocurrency market data from the Kraken exchange and stores bid and ask prices for relevant USDT pairs.
+
+10. `gateio.php`: This file retrieves cryptocurrency market data from the Gate.io exchange and stores bid and ask prices for relevant USDT pairs.
 
 ## How to Use
 
